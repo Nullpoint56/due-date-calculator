@@ -14,6 +14,21 @@ The **Due Date Calculator** determines the resolution date and time for an issue
     ```sh
     git clone https://github.com/Nullpoint56/due-date-calculator.git
     ```
+2. Navigate to the project directory:
+    ```sh
+    cd due-date-calculator
+    ```
+3. Create and activate a virtual environment:
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # On macOS/Linux
+    venv\Scripts\activate  # On Windows
+    ```
+4. Install dependencies:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
 
 ## Usage
 The `WorkSchedule` class at [main.py](./src/main.py). provides a method to calculate the due date for a task based on a given submission time and required working hours.
