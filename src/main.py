@@ -28,15 +28,14 @@ class WorkSchedule:
         remaining_hours = duration_hours
         current_datetime = start_datetime
 
-        while remaining_hours > 0:
+        while True:
             # Calculate time left in current workday
             workday_end = current_datetime.replace(hour=self.work_end_hour, minute=0, second=0)
-            time_available_today = (workday_end - current_datetime).total_seconds() / 3600  # More accurate calculation
+            time_available_today = (workday_end - current_datetime).total_seconds() / 3600
 
             if remaining_hours <= time_available_today:
                 return current_datetime + timedelta(hours=remaining_hours)
-            else:
-                remaining_hours -= time_available_today
-                current_datetime = self.get_next_workday(current_datetime)
 
-        return current_datetime
+            # Reduce remaining time and move to next workday
+            remaining_hours -= time_available_today
+            current_datetime = self.get_next_workday(current_datetime)

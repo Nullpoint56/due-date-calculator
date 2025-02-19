@@ -98,6 +98,3 @@ class TestCalculateDueDate(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.schedule.calculate_due_date(datetime(2025, 2, 21, 8, 59), 1)
 
-
-if __name__ == '__main__':
-    unittest.main()
